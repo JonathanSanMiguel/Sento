@@ -1,0 +1,75 @@
+/* Labels del form */
+.lnombre, .lemail, .LblApellido, .LblPassword{
+    background: none;
+    border: none;
+    padding-top: 10px;
+    color: #333;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 110%;
+}
+
+input[type = text]{
+    padding: 5px;
+    width: 100%;
+    /* border-style: solid ; */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    font-size: 140%;
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+
+input[type = email]{
+    padding: 5px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    font-size: 140%;
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+/* Input Password */
+input[type = password]{
+    padding: 5px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    font-size: 140%;
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+/* Boton registrarse */
+input[type = submit]{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+    color: rgb(24, 24, 24);
+    background-color: rgb(52, 162, 52);
+    margin-top: 30px;
+}
+input[type = submit]:hover{
+    background-color: greenyellow;
+}
+
+
+.divForm{
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 100%;
+    /* background-color: rgb(151, 26, 26); */
+    background-color: white;
+}
+.divPrincipal{
+    margin-top: 7%;
+    margin-bottom: 8%;
+    margin-left: 23%;
+    margin-right: 23%;
+}
