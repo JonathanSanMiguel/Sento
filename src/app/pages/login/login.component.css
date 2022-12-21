@@ -55,6 +55,7 @@ input[type = submit]{
     background-color: rgb(52, 162, 52);
     margin-top: 30px;
 }
+
 input[type = submit]:hover{
     background-color: greenyellow;
 }
@@ -66,10 +67,30 @@ input[type = submit]:hover{
     max-width: 100%;
     /* background-color: rgb(151, 26, 26); */
     background-color: white;
+    opacity: 96%;
 }
 .divPrincipal{
-    margin-top: 7%;
+/*     margin-top: 7%;
     margin-bottom: 8%;
-    margin-left: 23%;
-    margin-right: 23%;
+    margin-left: 20%;
+    margin-right: 20%; */
+/*     display: flex;
+    align-items: center;
+    justify-content: center; */
+/*     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    position: absolute;
+    top: 15%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    max-width: 600px;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
 }
