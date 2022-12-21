@@ -2,16 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
-import { AppComponent } from '../app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
+import { MainComponent } from './main/main.component';
+import { SigninComponent } from './signin/signin.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    MainComponent,
+    SigninComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,5 @@
 /* Labels del form */
-.lnombre, .lemail, .LblApellido, .LblPassword{
+.lemail, .LblPassword{
     background: none;
     border: none;
     padding-top: 10px;
@@ -82,15 +82,15 @@ input[type = submit]:hover{
     left: 50%;
     transform: translate(-50%, -50%); */
     position: absolute;
-    top: 15%;
+    top: 25%;
     left: 0;
     bottom: 0;
     right: 0;
     margin: auto;
-    max-width: 600px;
+    max-width: 500px;
 }
 
-p{
+a{
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
