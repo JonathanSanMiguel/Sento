@@ -9,6 +9,9 @@ import { SigninComponent } from './signin/signin.component';
 
 
 @NgModule({
+  exports:[
+    NavbarComponent
+  ],
   declarations: [
     NavbarComponent,
     LoginComponent,
