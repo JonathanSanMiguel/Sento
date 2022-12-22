@@ -1,27 +1,21 @@
 /* Labels del form */
-.lemail, .LblPassword{
+/* .lemail, .LblPassword{
     background: none;
     border: none;
-    padding-top: 10px;
+    padding-top: 15px;
     color: #333;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 110%;
-}
+} */
 
-input[type = text]{
-    padding: 5px;
-    width: 100%;
-    /* border-style: solid ; */
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    box-sizing: border-box;
-    font-size: 140%;
-    margin-top: 10px;
-    margin-bottom: 28px;
+h1{
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 25px;
 }
 
 input[type = email]{
+    font-family: sans-serif;
     padding: 5px;
     width: 100%;
     border-top: none;
@@ -34,6 +28,7 @@ input[type = email]{
 }
 /* Input Password */
 input[type = password]{
+    font-family: sans-serif;
     padding: 5px;
     width: 100%;
     border-top: none;
@@ -52,37 +47,31 @@ input[type = submit]{
     border-radius: 15px;
     border: none;
     color: rgb(24, 24, 24);
-    background-color: rgb(52, 162, 52);
+    background-color: rgb(66, 93, 173);
     margin-top: 30px;
+    margin-bottom: 6%;
 }
-
 input[type = submit]:hover{
-    background-color: greenyellow;
+    background-color: rgb(30, 39, 141);
 }
 
+.Signin{
+    font-family: sans-serif;
+    text-align: center;
+}
 
 .divForm{
-    padding: 30px;
+    padding: 35px;
+    padding-top: 20px;
     border-radius: 15px;
     max-width: 100%;
     /* background-color: rgb(151, 26, 26); */
     background-color: white;
-    opacity: 96%;
+    opacity: 95%;
 }
 .divPrincipal{
-/*     margin-top: 7%;
-    margin-bottom: 8%;
-    margin-left: 20%;
-    margin-right: 20%; */
-/*     display: flex;
-    align-items: center;
-    justify-content: center; */
-/*     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 0;
     bottom: 0;
     right: 0;
@@ -90,7 +79,3 @@ input[type = submit]:hover{
     max-width: 500px;
 }
 
-a{
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-}

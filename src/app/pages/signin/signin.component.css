@@ -1,14 +1,21 @@
+h2{
+    font-family: sans-serif;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
 /* Labels del form */
-.lnombre, .lemail, .LblApellido, .LblPassword{
+/* .lnombre, .lemail, .LblApellido, .LblPassword{
     background: none;
     border: none;
     padding-top: 10px;
     color: #333;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 110%;
-}
+} */
 
 input[type = text]{
+    font-family: sans-serif;
     padding: 5px;
     width: 100%;
     /* border-style: solid ; */
@@ -22,6 +29,7 @@ input[type = text]{
 }
 
 input[type = email]{
+    font-family: sans-serif;
     padding: 5px;
     width: 100%;
     border-top: none;
@@ -34,6 +42,7 @@ input[type = email]{
 }
 /* Input Password */
 input[type = password]{
+    font-family: sans-serif;
     padding: 5px;
     width: 100%;
     border-top: none;
@@ -46,20 +55,25 @@ input[type = password]{
 }
 /* Boton registrarse */
 input[type = submit]{
+    font-family: sans-serif;
     width: 100%;
     padding: 10px;
-    font-size: 20px;
+    font-size: 24px;
     border-radius: 15px;
     border: none;
     color: rgb(24, 24, 24);
-    background-color: rgb(52, 162, 52);
+    background-color: rgb(66, 93, 173);
     margin-top: 30px;
+    margin-bottom: 20px;
 }
-
 input[type = submit]:hover{
     background-color: greenyellow;
 }
 
+.Login{
+    font-family: sans-serif;
+    text-align: center;
+}
 
 .divForm{
     padding: 30px;
@@ -90,7 +104,3 @@ input[type = submit]:hover{
     max-width: 600px;
 }
 
-p{
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-}
