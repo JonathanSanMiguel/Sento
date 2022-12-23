@@ -3,11 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'pages', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+    path: 'auth', loadChildren: () => import('./auth/auth.module').then(a => a.AuthModule)
+  },
+  {
+    path: 'dashboard', loadChildren: () => import('./protected/protected.module').then(d => d.ProtectedModule)
   },
   {
     path: '**',
-    redirectTo: 'pages'
+    redirectTo: 'auth'
   }
 ];
 
