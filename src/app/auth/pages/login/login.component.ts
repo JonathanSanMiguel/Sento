@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
@@ -10,10 +10,16 @@ export class LoginComponent {
 
   constructor( private fb: FormBuilder ) { }
 
+  //Validar que los campos del login sean correctos
   miFormularioLogin: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   })
 
-  
+  Login(){
+    console.log(this.miFormularioLogin.value)
+    console.log(this.miFormularioLogin.valid)
+  }
+
+
 }

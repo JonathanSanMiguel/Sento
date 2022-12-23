@@ -1,18 +1,34 @@
-<div class="divPrincipal">
+<div class="divPrincipal" [formGroup]="miFormularioLogin" (ngSubmit)="Login()">
     <form action="">
         <div class="divForm">
             <h1>
                 🆂🅴🅽🆃🅾
             </h1>
 
-            <input type="email" placeholder="Ingrese su Email" required>
+            <input 
+                type="email" 
+                formControlName="email" 
+                placeholder="Ingrese su Email" 
+                required
+            >
 
-            <input type="password" placeholder="Ingrese su Password" required>
+            <input 
+                type="password" 
+                formControlName="password" 
+                placeholder="Ingrese su Password" 
+                required
+            >
 
-            <input type="submit" value="Iniciar Sesion">
+            <input 
+                type="submit" 
+                value="Iniciar Sesion" 
+                [disabled]="miFormularioLogin.invalid"
+            >
 
             <div class="Signin">
-                <span>No tiene una Cuenta?. <a routerLink="/auth/signin">Registrese</a></span>
+                <span>
+                    No tiene una Cuenta?. <a routerLink="/auth/signin">Registrese</a>
+                </span>
             </div>
         </div>
     </form>

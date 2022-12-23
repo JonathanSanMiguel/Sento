@@ -1,21 +1,43 @@
-<div class="divPrincipal">
+<div class="divPrincipal" [formGroup]="miFormularioSignin" (ngSubmit)="Signin()" >
 
     <form action="">
         <div class="divForm">
             <h2>Formulario de Registro</h2>
 
-            <input type="text" placeholder="Ingrese su Nombre(s)" required>
+            <input 
+                type="text"
+                formControlName="nombre"
+                placeholder="Ingrese su Nombre(s)" 
+                required
+            >
 
-            <input type="text" placeholder="Ingrese su Apellido(s)" required>
+            <input 
+                type="text" 
+                formControlName="apellido"
+                placeholder="Ingrese su Apellido(s)" 
+                required
+            >
 
-            <input type="email" placeholder="Ingrese su Email" required>
+            <input 
+                type="email"
+                formControlName="email"
+                placeholder="Ingrese su Email" 
+                required
+            >
 
-            <input type="password" placeholder="Ingrese su Password (Max. 6 caracteres)" required>
+            <input 
+                type="password" 
+                formControlName="password"
+                placeholder="Ingrese su Password (Min. 6 caracteres)" 
+                required
+            >
 
-            <input type="submit" value="Registrarse">
+            <input type="submit" value="Registrarse" [disabled]="miFormularioSignin.invalid">
 
             <div class="Login">
-                <span>Ya tiene una Cuenta?. <a routerLink="/auth/login">Inicie Sesion</a></span>
+                <span>
+                    Ya tiene una Cuenta?. <a routerLink="/auth/login">Inicie Sesion</a>
+                </span>
             </div>
         </div>
     </form>
