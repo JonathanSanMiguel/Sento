@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
@@ -7,8 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
-  constructor( private fb: FormBuilder ) { }
+  //Inyeccion de los servicios
+  constructor( private fb: FormBuilder, private router: Router ) { }
 
   //Validar que los campos del login sean correctos
   miFormularioLogin: FormGroup = this.fb.group({
@@ -16,9 +17,11 @@ export class LoginComponent {
     password: ['', [Validators.required, Validators.minLength(6)]]
   })
 
+  //Metodo que se acciona al presionar el boton Submit
   Login(){
     console.log(this.miFormularioLogin.value)
-    console.log(this.miFormularioLogin.valid)
+    //Navega a la pagina dashboard
+    this.router.navigateByUrl('/dashboard')
   }
 
 
