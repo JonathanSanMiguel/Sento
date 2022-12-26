@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { catchError, map, tap } from 'rxjs/operators'
-import { of } from 'rxjs'
+import { of, Observable } from 'rxjs';
 
 import { AuthResponse, User } from '../auth/interfaces/auth.interfaces'
 
@@ -21,6 +21,7 @@ export class LoginService {
     return {...this._User}
   }
 
+  //Metodo de Log In
   LogIn( email: string, password: string ){
 
     const Url = `${this.Api_Url}/login`
@@ -46,12 +47,22 @@ export class LoginService {
     )
   }//LogIn
 
-  ValidarJWToken(){
+  //Metodo que valida el JsonWebToken
+  ValidarJWToken(): Observable<boolean>{
+
     const Url = `${this.Api_Url}/renew`
+
     const headers = new HttpHeaders()
       .set('X-Token', localStorage.getItem('JWToken') || '')
 
-    return this.http.get(Url, { headers })
+    return this.http.get<AuthResponse>(Url, { headers }).pipe(
+      map(resp => {
+        return resp.ok
+      }),
+      //of sirve para retornar siempre false +
+      //porque siempre que marque error devera hacerlo.
+      catchError(err => of(false))
+    )
   }
 
 

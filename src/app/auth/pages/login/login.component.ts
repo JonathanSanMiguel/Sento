@@ -11,7 +11,7 @@ import { LoginService } from 'src/app/services/login.service'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  //Inyeccion de los servicios
+  // Inyeccion de los servicios
   constructor( private fb: FormBuilder, private router: Router, private authService: LoginService ) { }
 
   // Validar que los campos del login sean correctos
@@ -30,9 +30,6 @@ export class LoginComponent {
     // Manda los valores al metodo del servicio
     this.authService.LogIn(email, password)
       .subscribe(res => {
-
-        console.log(res)
-
         // Navega a la pagina dashboard
         if(res === 'true') {
           this.router.navigateByUrl('/dashboard')
