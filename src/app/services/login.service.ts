@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { catchError, map, tap } from 'rxjs/operators'
 import { of } from 'rxjs'
 
@@ -30,6 +30,8 @@ export class LoginService {
     return this.http.post<AuthResponse>(Url, Body).pipe(
       tap(resp => {
         if(resp.ok){
+          localStorage.setItem('JWToken', resp.JWtoken)
+
           this._User = {
             uid: resp.uid,
             nombre: resp.nombre,
@@ -43,5 +45,14 @@ export class LoginService {
       catchError(err => of(err.error.msg))
     )
   }//LogIn
+
+  ValidarJWToken(){
+    const Url = `${this.Api_Url}/renew`
+    const headers = new HttpHeaders()
+      .set('X-Token', localStorage.getItem('JWToken') || '')
+
+    return this.http.get(Url, { headers })
+  }
+
 
 }
