@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +9,12 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
 
-  constructor( private router: Router ) { }
+  constructor( private router: Router, private authService: LoginService ) { }
+
+  //Get para traer los datos del usuario que inicio sesion
+  get User(){
+    return this.authService.Usuario
+  }
 
   Logout(){
     this.router.navigateByUrl('/auth/login')

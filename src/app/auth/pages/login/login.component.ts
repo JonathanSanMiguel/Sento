@@ -20,18 +20,23 @@ export class LoginComponent {
 
   //Metodo que se acciona al presionar el boton Submit
   Login(){
-    //Destructuro los valores de email y password del objeto
+    //Destructura los valores de email y password del objeto.
     const { email, password } = this.miFormularioLogin.value
 
-    //Manod los valores al metodo del servicio
+    //Manda los valores al metodo del servicio
     this.authService.LogIn(email, password)
-      .subscribe(resp => {
-        console.log(resp)
-      })
+      .subscribe(response => {
 
-    //Navega a la pagina dashboard
-    //this.router.navigateByUrl('/dashboard')
-  }
+        console.log(response)
+
+        //Navega a la pagina dashboard
+        if(response === false) {
+          this.router.navigateByUrl('/dashboard')
+        }else{
+          //Mostrar mensaje de error
+        }
+      })
+  }//Login
 
 
 }
