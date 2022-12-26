@@ -25,12 +25,12 @@ export class LoginComponent {
 
     //Manda los valores al metodo del servicio
     this.authService.LogIn(email, password)
-      .subscribe(response => {
+      .subscribe(res => {
 
-        console.log(response)
+        console.log(res)
 
         //Navega a la pagina dashboard
-        if(response === false) {
+        if(res === 'true') {
           this.router.navigateByUrl('/dashboard')
         }else{
           //Mostrar mensaje de error
