@@ -29,7 +29,10 @@ export class LoginService {
 
     //Retorna el URL y body de tipo AuthResponse.
     return this.http.post<AuthResponse>(Url, Body).pipe(
+
       tap(resp => {
+
+
         if(resp.ok){
           localStorage.setItem('JWToken', resp.JWtoken)
 
@@ -38,7 +41,11 @@ export class LoginService {
             nombre: resp.nombre,
             apellido: resp.apellido,
           }
+          console.log(resp.uid)
+          console.log(resp.nombre);
         }
+
+
       }),
       //Si sale bien retorna la res.
       map(resp => resp.ok),
@@ -47,6 +54,7 @@ export class LoginService {
     )
   }//LogIn
 
+  
   //Metodo que valida el JsonWebToken
   ValidarJWToken(): Observable<boolean>{
 
@@ -57,6 +65,20 @@ export class LoginService {
 
     return this.http.get<AuthResponse>(Url, { headers }).pipe(
       map(resp => {
+
+
+        if(resp.ok){
+          localStorage.setItem('JWToken', resp.JWtoken)
+
+          this._User = {
+            uid: resp.uid,
+            nombre: resp.nombre,
+            apellido: resp.apellido,
+          }
+        }
+
+        console.log('2' + resp.uid)
+        console.log('2' + resp.nombre);
         return resp.ok
       }),
       //of sirve para retornar siempre false +

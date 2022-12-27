@@ -22,8 +22,6 @@ export class LoginComponent {
 
   // Metodo que se acciona al presionar el boton Submit
   Login(){
-
-    //this.authService.ValidarJWToken().subscribe(resp => console.log(resp))
     // Destructura los valores de email y password del objeto.
     const { email, password } = this.miFormularioLogin.value
 
