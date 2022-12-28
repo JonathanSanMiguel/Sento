@@ -15,7 +15,7 @@ export class LoginService {
 
   //EndPoint del Api REST
   private Api_Url = 'http://localhost:4000/gymkhana/auth'
-  private _User?: User
+  private _User!: User
 
   get Usuario(){
     return {...this._User}
@@ -29,9 +29,7 @@ export class LoginService {
 
     //Retorna el URL y body de tipo AuthResponse.
     return this.http.post<AuthResponse>(Url, Body).pipe(
-
       tap(resp => {
-
 
         if(resp.ok){
           localStorage.setItem('JWToken', resp.JWtoken)
@@ -41,10 +39,7 @@ export class LoginService {
             nombre: resp.nombre,
             apellido: resp.apellido,
           }
-          console.log(resp.uid)
-          console.log(resp.nombre);
         }
-
 
       }),
       //Si sale bien retorna la res.
@@ -66,25 +61,24 @@ export class LoginService {
     return this.http.get<AuthResponse>(Url, { headers }).pipe(
       map(resp => {
 
+        localStorage.setItem('JWToken', resp.JWtoken)
 
-        if(resp.ok){
-          localStorage.setItem('JWToken', resp.JWtoken)
-
-          this._User = {
-            uid: resp.uid,
-            nombre: resp.nombre,
-            apellido: resp.apellido,
-          }
+        this._User = {
+          uid: resp.uid,
+          nombre: resp.nombre,
+          apellido: resp.apellido
         }
 
-        console.log('2' + resp.uid)
-        console.log('2' + resp.nombre);
         return resp.ok
       }),
       //of sirve para retornar siempre false +
       //porque siempre que marque error devera hacerlo.
       catchError(err => of(false))
     )
+  }
+
+  LogOut(){
+    localStorage.removeItem('JWToken')
   }
 
 
