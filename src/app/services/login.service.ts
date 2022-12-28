@@ -38,13 +38,13 @@ export class LoginService {
             uid: resp.uid,
             nombre: resp.nombre,
             apellido: resp.apellido,
-          }
-        }
+          }//_User
+        }//if
 
       }),
       //Si sale bien retorna la res.
       map(resp => resp.ok),
-      //Si hay error retorna el mensaje de error.
+      //Si hay error retorna el mensaje del error.
       catchError(err => of(err.error.msg))
     )
   }//LogIn

@@ -1,13 +1,3 @@
-/* Labels del form */
-/* .lemail, .LblPassword{
-    background: none;
-    border: none;
-    padding-top: 15px;
-    color: #333;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 110%;
-} */
-
 h1{
     font-size: 3rem;
     text-align: center;
@@ -26,6 +16,7 @@ input[type = email]{
     margin-top: 10px;
     margin-bottom: 28px;
 }
+
 /* Input Password */
 input[type = password]{
     font-family: sans-serif;
@@ -39,33 +30,39 @@ input[type = password]{
     margin-top: 10px;
     margin-bottom: 28px;
 }
+
 /* Boton registrarse */
 input[type = submit]{
     width: 100%;
     padding: 10px;
     font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     border-radius: 15px;
     border: none;
     color: rgb(255, 255, 255);
     background-color: rgb(106, 119, 160);
     margin-top: 30px;
     margin-bottom: 6%;
+    cursor: pointer;
+    
 }
 input[type = submit]:hover{
     background-color: rgb(30, 39, 141);
 }
 
+/* Link para ir al SignIn */
 .Signin{
     font-family: sans-serif;
     text-align: center;
 }
+
 
 .divForm{
     padding: 35px;
     padding-top: 20px;
     border-radius: 15px;
     max-width: 100%;
-    /* background-color: rgb(151, 26, 26); */
     background-color: white;
     opacity: 95%;
 }
