@@ -64,7 +64,7 @@ export class LoginService {
           this._User = {
             uid: resp.uid,
             nombre: resp.nombre,
-            apellido: resp.apellido,
+            apellido: resp.apellido
           }
         }
       }),

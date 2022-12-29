@@ -36,7 +36,6 @@ export class SigninComponent {
           Swal.fire('Error', res, 'error')
         }
       })
-
   }
 
 
