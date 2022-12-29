@@ -59,15 +59,17 @@ input[type = submit]{
     width: 100%;
     padding: 10px;
     font-size: 24px;
+    letter-spacing: 2px;
     border-radius: 15px;
     border: none;
     color: rgb(255, 255, 255);
     background-color: rgb(106, 119, 160);
     margin-top: 30px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 input[type = submit]:hover{
-    background-color: greenyellow;
+    background-color: rgb(17, 9, 131);
 }
 
 .Login{
@@ -84,23 +86,12 @@ input[type = submit]:hover{
     opacity: 96%;
 }
 .divPrincipal{
-/*     margin-top: 7%;
-    margin-bottom: 8%;
-    margin-left: 20%;
-    margin-right: 20%; */
-/*     display: flex;
-    align-items: center;
-    justify-content: center; */
-/*     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     position: absolute;
     top: 15%;
     left: 0;
     bottom: 0;
     right: 0;
     margin: auto;
-    max-width: 600px;
+    max-width: 500px;
 }
 
