@@ -16,7 +16,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'auth'
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
