@@ -17,11 +17,12 @@ export class LoginService {
   private Api_Url = 'http://localhost:4000/gymkhana/auth'
   private _User!: User
 
+
   get Usuario(){
     return {...this._User}
   }
 
-  //Metodo de Log In
+
   LogIn( email: string, password: string ){
 
     const Url = `${this.Api_Url}/login`
@@ -29,24 +30,17 @@ export class LoginService {
 
     //Retorna el URL y body de tipo AuthResponse.
     return this.http.post<AuthResponse>(Url, Body).pipe(
+
       tap(resp => {
-
-        if(resp.ok){
-          localStorage.setItem('JWToken', resp.JWtoken)
-
-          this._User = {
-            uid: resp.uid,
-            nombre: resp.nombre,
-            apellido: resp.apellido,
-          }//_User
-        }//if
-
+        if(resp.ok) localStorage.setItem('JWToken', resp.JWtoken)
       }),
-      //Si sale bien retorna la res.
+
+      //Si sale bien retorna la res.ok
       map(resp => resp.ok),
-      //Si hay error retorna el mensaje del error.
+
+      //Si ocurre un error, retorna el mensaje de error
       catchError(err => of(err.error.msg))
-    )
+    )//return
   }//LogIn
 
 
@@ -57,20 +51,18 @@ export class LoginService {
 
     // Retorna el Url y Body, que son de tipo AuthResponse
     return this.http.post<AuthResponse>(Url, Body).pipe(
-      tap(resp => {
-        if (resp.ok){
-          localStorage.setItem('JWToken', resp.JWtoken)
 
-          this._User = {
-            uid: resp.uid,
-            nombre: resp.nombre,
-            apellido: resp.apellido
-          }
-        }
+      tap(resp => {
+        //Si la resp.ok es true guarda los datos en un JsonWebToken
+        if (resp.ok) localStorage.setItem('JWToken', resp.JWtoken)
       }),
+
+      //Si sale bien retorna la res.ok
       map(resp => resp.ok),
+
+      //Si ocurre un error, retorna el mensaje de error
       catchError(err => of(err.error.msg))
-    )
+    )//return
   }//Sign
 
   
@@ -89,6 +81,7 @@ export class LoginService {
 
         this._User = {
           uid: resp.uid,
+          email: resp.email,
           nombre: resp.nombre,
           apellido: resp.apellido
         }
@@ -98,12 +91,12 @@ export class LoginService {
       //of sirve para retornar siempre false +
       //porque siempre que marque error devera hacerlo.
       catchError(err => of(false))
-    )
-  }
+    )//return
+  }//ValidarJWToken
+
 
   LogOut(){
     localStorage.removeItem('JWToken')
   }
-
 
 }
