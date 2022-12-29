@@ -49,6 +49,30 @@ export class LoginService {
     )
   }//LogIn
 
+
+  SigIn(nombre: string, apellido: string, email: string, password: string){
+    
+    const Url = `${this.Api_Url}/newUser`
+    const Body = { nombre, apellido, email, password }
+
+    // Retorna el Url y Body, que son de tipo AuthResponse
+    return this.http.post<AuthResponse>(Url, Body).pipe(
+      tap(resp => {
+        if (resp.ok){
+          localStorage.setItem('JWToken', resp.JWtoken)
+
+          this._User = {
+            uid: resp.uid,
+            nombre: resp.nombre,
+            apellido: resp.apellido,
+          }
+        }
+      }),
+      map(resp => resp.ok),
+      catchError(err => of(err.error.msg))
+    )
+  }//Sign
+
   
   //Metodo que valida el JsonWebToken
   ValidarJWToken(): Observable<boolean>{
